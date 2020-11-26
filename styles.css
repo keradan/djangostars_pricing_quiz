@@ -553,5 +553,10 @@
 		font-weight: normal;
 		font-size: 13px;
 		outline: none;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+	.prices-screen .popup-quiz .quiz-step-block .quiz-finish button.quiz-close-btn:hover {
+		background: #3e9912;
 	}
 /* /quiz finish */
