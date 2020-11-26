@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Thin"), local("Lato-Thin"), url("https://djangostars.com/static/assets/b052ca2329967f94e4021902d973cd55.b052ca232996.woff2") format("woff2"), url("https://djangostars.com/static/assets/46c2ac5b83274f1b94033afb603fcb8a.46c2ac5b8327.woff") format("woff"), url("https://djangostars.com/static/assets/8da5272ad9e5f4f41eeec9069d3d85d8.8da5272ad9e5.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Thin Italic"), local("Lato-ThinItalic"), url("https://djangostars.com/static/assets/7c82ddc3b9296c4db2beeb9664d9928a.7c82ddc3b929.woff2") format("woff2"), url("https://djangostars.com/static/assets/94032ce5267d4fbeb40e68e70bc62a7a.94032ce5267d.woff") format("woff"), url("https://djangostars.com/static/assets/c49607ee08bc00f53350875f18289c33.c49607ee08bc.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Light"), local("Lato-Light"), url("https://djangostars.com/static/assets/caf520060ff4926b46bb58d2966f1dfd.caf520060ff4.woff2") format("woff2"), url("https://djangostars.com/static/assets/f7c88895b1d589f8dee785f727078c5b.f7c88895b1d5.woff") format("woff"), url("https://djangostars.com/static/assets/4cd8101f3a8e452991f3b823c038a823.4cd8101f3a8e.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Light Italic"), local("Lato-LightItalic"), url("https://djangostars.com/static/assets/b6a98825168d2514fbf4d8554cc7f334.b6a98825168d.woff2") format("woff2"), url("https://djangostars.com/static/assets/d412d55aa73a73d3be5af58ac7762823.d412d55aa73a.woff") format("woff"), url("https://djangostars.com/static/assets/553439f3e94e00c9f908778a349b3144.553439f3e94e.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Regular"), local("Lato-Regular"), url("https://djangostars.com/static/assets/8201bf32d4c0cf86a54e75b4464caec6.8201bf32d4c0.woff2") format("woff2"), url("https://djangostars.com/static/assets/1fbf86c9bbb08fd76eb28eb50eeeb86a.1fbf86c9bbb0.woff") format("woff"), url("https://djangostars.com/static/assets/03fcc2b689dbbde1994eebd1ea7de296.03fcc2b689db.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Italic"), local("Lato-Italic"), url("https://djangostars.com/static/assets/4b1810180974f499643b285cc9b5aa59.4b1810180974.woff2") format("woff2"), url("https://djangostars.com/static/assets/62aeca010211d9c6c778ef256937a2bc.62aeca010211.woff") format("woff"), url("https://djangostars.com/static/assets/4d1864b975844cfe5590a6afa067d380.4d1864b97584.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Medium"), local("Lato-Medium"), url("https://djangostars.com/static/assets/4a6fa802c6fc2c12b4d2b79d291350be.4a6fa802c6fc.woff2") format("woff2"), url("https://djangostars.com/static/assets/7fd6bc6bdb0265ed41f84042c916c1d8.7fd6bc6bdb02.woff") format("woff"), url("https://djangostars.com/static/assets/c15fd21b2de268ed039c45198bdfaf4d.c15fd21b2de2.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Medium Italic"), local("Lato-MediumItalic"), url("https://djangostars.com/static/assets/a021c82f9d2a87f5fd656311d25baa48.a021c82f9d2a.woff2") format("woff2"), url("https://djangostars.com/static/assets/2cf1be2fd8cbf07de036b4e0ab14a377.2cf1be2fd8cb.woff") format("woff"), url("https://djangostars.com/static/assets/d910f1b9310942d9a3dc169be6f44c61.d910f1b93109.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Semibold"), local("Lato-Semibold"), url("https://djangostars.com/static/assets/44aba5a619630ad15e3b85af5072368f.44aba5a61963.woff2") format("woff2"), url("https://djangostars.com/static/assets/9ab55ec42e1a85034ef71af1be4ce8b3.9ab55ec42e1a.woff") format("woff"), url("https://djangostars.com/static/assets/ea3fcf1502443dcf3a66a76075c480ce.ea3fcf150244.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Semibold Italic"), local("Lato-SemiboldItalic"), url("https://djangostars.com/static/assets/215d9916804f9d42f732a14f04c9b602.215d9916804f.woff2") format("woff2"), url("https://djangostars.com/static/assets/f6f0cb8c6fd46013cdf059fd14f431b7.f6f0cb8c6fd4.woff") format("woff"), url("https://djangostars.com/static/assets/086d934b37c8392dd04c3d811aa43903.086d934b37c8.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Bold"), local("Lato-Bold"), url("https://djangostars.com/static/assets/e1cbc7aaea1cb5f65dd77ffdc5126556.e1cbc7aaea1c.woff2") format("woff2"), url("https://djangostars.com/static/assets/7ff9916172d5bdd2dd14a28f890ec83a.7ff9916172d5.woff") format("woff"), url("https://djangostars.com/static/assets/2b4a86f012402080bad3e1334adb21d6.2b4a86f01240.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("https://djangostars.com/static/assets/0e3cc35ec935cd8df38489d3c4fe138f.0e3cc35ec935.woff2") format("woff2"), url("https://djangostars.com/static/assets/432c5130ceb6e5aee63661ed6032f6af.432c5130ceb6.woff") format("woff"), url("https://djangostars.com/static/assets/340502a7461541ad879494bbab74cb0b.340502a74615.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Heavy"), local("Lato-Heavy"), url("https://djangostars.com/static/assets/37bbdbcbc1b26577f0a009fdf34f060a.37bbdbcbc1b2.woff2") format("woff2"), url("https://djangostars.com/static/assets/3c8e2fea9560cc782d239c52c81faeb0.3c8e2fea9560.woff") format("woff"), url("https://djangostars.com/static/assets/51e5d23a8b7586d11bc2112ad4201797.51e5d23a8b75.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Heavy Italic"), local("Lato-HeavyItalic"), url("https://djangostars.com/static/assets/915671b2e7a29a4deb2731a569b89d46.915671b2e7a2.woff2") format("woff2"), url("https://djangostars.com/static/assets/d46e3712225f8f18b25f18bf90b755fd.d46e3712225f.woff") format("woff"), url("https://djangostars.com/static/assets/ac87c14fbb1e90314710450c81d1f138.ac87c14fbb1e.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Black"), local("Lato-Black"), url("https://djangostars.com/static/assets/67a4543adcb77e4c7796a6844fa188b7.67a4543adcb7.woff2") format("woff2"), url("https://djangostars.com/static/assets/5b2b2bea8002c5ac1bb02d60f5faddc1.5b2b2bea8002.woff") format("woff"), url("https://djangostars.com/static/assets/13e3d0559f9d1376e89cd08198ad5f70.13e3d0559f9d.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("https://djangostars.com/static/assets/a0894cb3424a7279b441a7edc7a60565.a0894cb3424a.woff2") format("woff2"), url("https://djangostars.com/static/assets/46380352796e5966f0d0991c91eec0ca.46380352796e.woff") format("woff"), url("https://djangostars.com/static/assets/8d3da84773c91de2fdd59fc993c1d570.8d3da84773c9.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
