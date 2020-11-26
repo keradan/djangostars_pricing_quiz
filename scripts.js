@@ -41,7 +41,6 @@ quiz.close = function(){
 };
 
 quiz.update_data = function(quiz_model_key_text, new_data = null){
-	console.log(`update model: ${quiz_model_key_text} with this data: `, new_data);
 	let model = quiz.data;
 	quiz_model_key_text.split('.').forEach(function(key, i, all_keys) {
 		if (i === all_keys.length - 1) model[key] = new_data;
