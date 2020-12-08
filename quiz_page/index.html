@@ -1,0 +1,195 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css">
+		<style>
+			body {
+				font-family: 'Lato', sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<section class="prices-screen">
+			<div class="popup-quiz">
+				<div class="inner">
+					<div class="quiz-step-block" data-quiz-step-id="1" data-quiz-cur-step data-quiz-anim-dir="r">
+						<img src="img/cross.svg" alt="" data-quiz-close class="close-cross-btn">
+						<div class="quiz-progress-bar">
+							<i class="done"></i>
+							<i></i>
+							<i></i>
+							<i></i>
+						</div>
+						<div class="title">Describe the concept of your project</div>
+						<textarea onchange="window.keradan_quiz.update_data('content_description', this.value)" placeholder="Describe briefly your project (e.g what is it about, specific features, project milestones)"></textarea>
+						<button class="next" data-quiz-go-to-step="2">next</button>
+					</div>
+					<div class="quiz-step-block" data-quiz-step-id="2" data-quiz-anim-dir="r">
+						<img src="img/cross.svg" alt="" data-quiz-close class="close-cross-btn">
+						<div class="quiz-progress-bar">
+							<i class="done"></i>
+							<i class="done"></i>
+							<i></i>
+							<i></i>
+						</div>
+						<div class="title">What services do you require to deliver<br>the project?</div>
+						<div class="checkboxes">
+							<label class="item">
+								<input type="checkbox" onchange="window.keradan_quiz.update_data('services.software_consultancy', this.checked)">
+								<span class="checkbox"></span>
+								<span class="text">software consultancy</span>
+							</label>
+							<label class="item">
+								<input type="checkbox" onchange="window.keradan_quiz.update_data('services.web_development', this.checked)">
+								<span class="checkbox"></span>
+								<span class="text">web development</span>
+							</label>
+							<label class="item">
+								<input type="checkbox" onchange="window.keradan_quiz.update_data('services.mobile_app_development', this.checked)">
+								<span class="checkbox"></span>
+								<span class="text">mobile app development</span>
+							</label>
+							<label class="item">
+								<input type="checkbox" onchange="window.keradan_quiz.update_data('services.ux_ui_design', this.checked)">
+								<span class="checkbox"></span>
+								<span class="text">ux/ui design</span>
+							</label>
+							<label class="item">
+								<input type="checkbox" onchange="window.keradan_quiz.update_data('services.data_science', this.checked)">
+								<span class="checkbox"></span>
+								<span class="text">data science</span>
+							</label>
+							<label class="item">
+								<input type="checkbox" onchange="window.keradan_quiz.update_data('services.quality_assurance', this.checked)">
+								<span class="checkbox"></span>
+								<span class="text">quality assurance</span>
+							</label>
+						</div>
+						<div class="nav-buttons">
+							<button class="back" data-quiz-go-to-step="1">back</button>
+							<button class="next" data-quiz-go-to-step="3">next</button>
+						</div>
+					</div>
+					<div class="quiz-step-block" data-quiz-step-id="3" data-quiz-anim-dir="r">
+						<img src="img/cross.svg" alt="" data-quiz-close class="close-cross-btn">
+						<div class="quiz-progress-bar">
+							<i class="done"></i>
+							<i class="done"></i>
+							<i class="done"></i>
+							<i></i>
+						</div>
+						<div class="title">What is your budget range?</div>
+						<div class="budget-range">
+							<span data-budget="$20k" onclick="window.keradan_quiz.update_data('budget_range', this.dataset.budget)">
+								<i></i>
+							</span>
+							<span data-budget="$50k" onclick="window.keradan_quiz.update_data('budget_range', this.dataset.budget)">
+								<i></i>
+							</span>
+							<span data-budget="$100k" onclick="window.keradan_quiz.update_data('budget_range', this.dataset.budget)">
+								<i></i>
+							</span>
+							<span data-budget="$250k" onclick="window.keradan_quiz.update_data('budget_range', this.dataset.budget)">
+								<i></i>
+							</span>
+							<span data-budget="$500k" onclick="window.keradan_quiz.update_data('budget_range', this.dataset.budget)">
+								<i></i>
+							</span>
+						</div>
+						<div class="nav-buttons">
+							<button class="back" data-quiz-go-to-step="2">back</button>
+							<button class="next" data-quiz-go-to-step="4">next</button>
+						</div>
+					</div>
+					<div class="quiz-step-block" data-quiz-step-id="4" data-quiz-anim-dir="r">
+						<img src="img/cross.svg" alt="" data-quiz-close class="close-cross-btn">
+						<div class="title">How should we contact you to<br>share the price & timing estimate?</div>
+						<div class="form-inputs">
+							<input type="text" onchange="window.keradan_quiz.update_data('contacts.name', this.value)" placeholder="Name*">
+							<input type="text" onchange="window.keradan_quiz.update_data('contacts.email', this.value)" placeholder="Email*">
+							<input type="text" onchange="window.keradan_quiz.update_data('contacts.phone', this.value)" placeholder="Phone number*">
+							<div class="checkboxes">
+								<label class="item">
+									<input type="checkbox" onchange="window.keradan_quiz.update_data('nda_protect', this.checked)">
+									<span class="checkbox"></span>
+									<span class="text">I want to protect my data by signing an NDA.</span>
+								</label>
+							</div>
+						</div>
+						<button class="send-form" onclick="window.keradan_quiz.attempt_to_send_data()">
+							Get price & timing estimate
+						</button>
+					</div>
+					<div class="quiz-step-block" data-quiz-step-id="5" data-quiz-anim-dir="r">
+						<img src="img/cross.svg" alt="" data-quiz-close class="close-cross-btn">
+						<div class="quiz-finish">
+							<div class="title">Thank you!<br>We will contact you shortly</div>
+							<button data-quiz-close class="quiz-close-btn">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="prices-content">
+				<div class="big-title">Pricing</div>
+				<div class="pricing-blocks">
+					<div class="block">
+						<div class="title">Create a new product</div>
+						<div class="description-text">Build your web, mobile or desktop app from scratch.</div>
+						<button class="action-btn" data-quiz-trigger-action="click">
+							Get a quote & timing estimate
+						</button>
+						<div class="included-list">
+							<div class="list-title">What’s included:</div>
+							<ul>
+								<li>Discovery and planning</li>
+								<li>UX/UI Design</li>
+								<li>Software development</li>
+								<li>Quality assurance testing</li>
+								<li>DevOps</li>
+								<li>Post-Release Support And Growth</li>
+							</ul>
+						</div>
+					</div>
+					<div class="block">
+						<div class="title">Improve existing product</div>
+						<div class="description-text">Redesign, add features, or scale your digital solution.</div>
+						<button class="action-btn" data-quiz-trigger-action="click">
+							Get a quote & timing estimate
+						</button>
+						<div class="included-list">
+							<div class="list-title">What’s included:</div>
+							<ul>
+								<li>Depending on your needs, the plan may include any of the stages from the “Develop new product” plan</li>
+							</ul>
+						</div>
+					</div>
+					<div class="block">
+						<div class="title">Hire a dedicated team</div>
+						<div class="description-text">Empower your team with versatile an experienced software developers</div>
+						<button class="action-btn" data-quiz-trigger-action="click">
+							Get a quote
+						</button>
+						<div class="included-list">
+							<div class="list-title">What’s included:</div>
+							<ul>
+								<li>Scaling your existing team or building one with our experts in web, mobile and cross-platform development.</li>
+								<li>Lead time up to 2 business weeks.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cta-block">
+				<div class="title">Looking for something else?</div>
+				<button class="cta-btn" data-quiz-trigger-action="click">
+					Contact us
+				</button>
+			</div>
+		</section>
+		<script src="scripts.js"></script>
+	</body>
+</html>

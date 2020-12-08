@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>django</title>
+
+    <link rel="preload" href="https://djangostars.com/static/assets/vundle.0ac21a72dace.js" as="script">
+    <link rel="stylesheet" href="original.css">
+
+      <!--if landing use script  under -->
+      <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js' defer></script>
+
+      <!-- some styles from original -->
+        <style>
+          .l-header__bg-img {
+            background-image: url('https://djangostars.com/media/images/img_main_2.2e16d0ba.fill-375x667.jpg');
+            background-image: -webkit-image-set(url(https://djangostars.com/media/images/img_main_2.2e16d0ba.fill-375x667.jpg) 2x, url(https://djangostars.com/media/images/img_main_2.2e16d0ba.fill-375x812.jpg) 3x);
+            background-image: image-set(url(https://djangostars.com/media/images/img_main_2.2e16d0ba.fill-375x667.jpg) 2x, url(https://djangostars.com/media/images/img_main_2.2e16d0ba.fill-375x812.jpg) 3x);
+          }
+          @media (min-width: 480px) {
+            .l-header__bg-img {
+              background-image: url('https://djangostars.com/media/images/img_main_2.width-992.jpg');
+              background-image: -webkit-image-set(url(https://djangostars.com/media/images/img_main_2.width-992.jpg) 2x, url(https://djangostars.com/media/images/img_main_2.width-992.jpg) 3x);
+              background-image: image-set(url(https://djangostars.com/media/images/img_main_2.width-992.jpg) 2x, url(https://djangostars.com/media/images/img_main_2.width-992.jpg) 3x);
+            }
+          }
+          @media (min-width: 768px) {
+            .l-header__bg-img {
+              background-image: url('https://djangostars.com/media/images/img_main_2.width-1440.jpg');
+              background-image: -webkit-image-set(url(https://djangostars.com/media/images/img_main_2.width-1440.jpg) 2x, url(https://djangostars.com/media/images/img_main_2.width-1440.jpg) 3x);
+              background-image: image-set(url(https://djangostars.com/media/images/img_main_2.width-1440.jpg) 2x, url(https://djangostars.com/media/images/img_main_2.width-1440.jpg) 3x);
+            }
+          }
+        </style>
+      <!-- /some styles from original -->
+
+      <!-- fonts from google -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+      <!-- /fonts from google -->
+
+      <!-- new keradans styles -->
+        <style> /* common */
+          .green-line-title {
+            position: relative;
+            z-index: 1;
+          }
+          .green-line-title::before {
+            content: '';
+            height: 25%;
+            left: -5px;
+            right: -5px;
+            bottom: 3px;
+            background-color: #6cbd45;
+            position: absolute;
+            z-index: -1;
+          }
+          /* /common */
+        </style>
+
+        <style> /* first-screen */
+          .l-header__content {
+            align-items: center;
+          }
+          .l-header__content h1::before {
+            content: '';
+            color: white;
+            position: absolute;
+            height: 15%;
+            left: -10px;
+            right: -10px;
+            top: 35%;
+            background: #6cbd45;
+            z-index: -1;
+          }
+          .l-header__content h1 {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 56px;
+            line-height: 72px;
+          }
+          .l-header__content .description {
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 30px;
+          }
+          .l-header__content .achievements {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          .l-header__content .achievements .top-3-text {
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 32px;
+            color: #6CBD45;
+            text-transform: uppercase;
+          }
+          .l-header__content .achievements .according-to-clutch {
+            margin: 0 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          .l-header__content .achievements .according-to-clutch span {
+            text-align: center;
+            line-height: 15px;
+            margin-bottom: 10px;
+          }
+          .l-header__content .achievements .according-to-clutch img.clutch-logo {
+            max-width: 50px;
+          }
+          .l-header__content .achievements img.clutch-badge {
+            margin: 0 10px;
+            max-width: 70px;
+          }
+          /* /first-screen */
+        </style>
+
+        <style> /* #what-are-you-looking-for-block */
+          #what-are-you-looking-for-block {
+            padding-bottom: 50px;
+          }
+          #what-are-you-looking-for-block h2.headline {
+            font-weight: bold;
+            font-size: 24px;
+            text-transform: none;
+            letter-spacing: 0;
+          }
+          #what-are-you-looking-for-block .services-list__heading {
+            padding-top: 25px;
+          }
+          #what-are-you-looking-for-block h2.headline::before, #what-are-you-looking-for-block h2.headline::after {
+            display: none;
+          }
+          #what-are-you-looking-for-block .services-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          #what-are-you-looking-for-block .services-container a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 240px;
+            height: 160px;
+            margin: 0 10px;
+            background: white;
+          }
+          #what-are-you-looking-for-block .services-container a img {
+            width: 60px;
+            height: 60px;
+          }
+          #what-are-you-looking-for-block .services-container a span {
+            font-size: 14px;
+            color: #202020;
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-weight: bold;
+          }
+          /* /#what-are-you-looking-for-block */
+        </style>
+
+        <style>/* #how-we-help-block */
+          #how-we-help-block {
+            padding: 100px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+          }
+          #how-we-help-block .text-description {
+            width: calc(45% - 50px);
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 36px;
+            color: #2E2E2E;
+          }
+          #how-we-help-block .image-headline {
+            width: 55%;
+            height: 420px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 40px;
+          }
+          #how-we-help-block .image-headline p {
+            color: white;
+            font-weight: 900;
+            font-size: 40px;
+            line-height: 46px;
+            text-align: center;
+          }
+          /* /#how-we-help-block */
+        </style>
+
+        <style> /* #python-experience */
+          #python-experience {
+            margin: 0;
+            max-width: 100%;
+            padding: 0;
+          }
+          #python-experience .ds-python__solutions-content {
+            padding: 80px 150px;
+            background: #F9F9F9;
+            flex-wrap: wrap;
+          }
+          #python-experience .ds-python__solutions-content .content-column.clutch {
+            display: flex;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: space-between;
+            max-width: 360px;
+            min-width: 260px;
+            padding-top: 40px;
+            padding-bottom: 55px;
+            height: 400px;
+            background: white;
+          }
+          #python-experience .content-column.clutch .head .big {
+            font-weight: 900;
+            font-size: 72px;
+            text-align: center;
+            color: #6CBD45;
+            text-transform: uppercase;
+          }
+          #python-experience .content-column.clutch .head .small {
+            font-size: 14px;
+            line-height: 20px;
+            color: #2E2E2E;
+            text-align: center;
+          }
+          #python-experience .content-column.clutch .clutch-reviews img {
+            width: 170px;
+          }
+          #python-experience .ds-python__solutions-content .content-description {
+            width: calc(100% - 270px);
+            min-width: calc(100% - 400px);
+          }
+          @media (min-width: 1100px) {
+            #python-experience .ds-python__solutions-content .content-description {
+              min-width: calc(100% - 310px);
+            }
+          }
+          @media (min-width: 1300px) {
+            #python-experience .ds-python__solutions-content .content-description {
+              min-width: calc(100% - 390px);
+            }
+            #python-experience .ds-python__solutions-content .content-column.clutch {
+              min-width: 340px;
+            }
+          }
+          #python-experience .ds-python__solutions-content .content-description h3.subheading {
+            margin-bottom: 10px;
+          }
+          #python-experience .ds-python__solutions-content .content-description p.description {
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            color: #757575;
+            margin-bottom: 50px;
+          }
+          #python-experience .ds-python__solutions-content .content-description p.list-headline {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            color: #2E2E2E;
+          }
+          #python-experience .ds-python__solutions-content .content-description .images-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+          }
+          #python-experience .ds-python__solutions-content .content-description .images-links a {
+            display: block;
+            padding: 0 10px;
+          }
+          #python-experience .reviews-slider-wrapper {
+            width: 100%;
+            background: white;
+            margin-top: 30px;
+          }
+          /* /#python-experience */
+        </style>
+
+        <style> /* #python-experience .reviews-slider-wrapper */
+          #python-experience .reviews-slider-wrapper {
+            position: relative;
+          }
+          #python-experience .reviews-slider-wrapper button.prev, #python-experience .reviews-slider-wrapper button.next {
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 80px;
+            border: 1px solid #6CBD45;
+            border-radius: 50%;
+            background: transparent;
+            transition: all 0.2s ease;
+          }
+          #python-experience .reviews-slider-wrapper button.prev:hover, #python-experience .reviews-slider-wrapper button.next:hover {
+            background: #6CBD45;
+          }
+          #python-experience .reviews-slider-wrapper button.prev svg path, #python-experience .reviews-slider-wrapper button.next svg path {
+            fill: #6CBD45;
+          }
+          #python-experience .reviews-slider-wrapper button.prev:hover svg path, #python-experience .reviews-slider-wrapper button.next:hover svg path {
+            fill: white;
+          }
+          #python-experience .reviews-slider-wrapper button.prev {
+            left: -100px;
+          }
+          #python-experience .reviews-slider-wrapper button.next {
+            right: -100px;
+          }
+          #python-experience .reviews-slider-wrapper .slider:not(.slick-initialized) .python-experience-slide {
+            display: none;
+          }
+          .python-experience-slide {
+            color: #2E2E2E;
+          }
+          .python-experience-slide .inner {
+            display: flex;
+            flex-wrap: nowrap;
+            padding: 35px;
+          }
+          .python-experience-slide img.authors-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-right: 30px;
+          }
+          .python-experience-slide .info {
+            width: calc(100% - 160px);
+            height: 180px;
+          }
+          .python-experience-slide .info .testimonial-text {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+          }
+          .python-experience-slide .info .c-testimonial-item {
+            margin: 0;
+            margin-top: 10px;
+            margin-bottom: 20px;
+          }
+          .python-experience-slide .info .c-testimonial-item .c-testimonial-item__clutch {
+            justify-content: flex-start;
+            position: static;
+            transform: none;
+            opacity: 1;
+          }
+          .python-experience-slide .info .authors-name {
+            font-weight: bold;
+            font-size: 16px;
+          }
+          .python-experience-slide .info .authors-position {
+            font-weight: normal;
+            font-size: 14px;
+            color: #A6A6A6;
+            margin: 5px 0;
+          }
+          .python-experience-slide .info .authors-position a {
+            color: #6CBD45;
+          }
+          .python-experience-slide .info .authors-place {
+            font-weight: normal;
+            font-size: 14px;
+          }
+          /* /#python-experience .reviews-slider-wrapper */
+        </style>
+
+        <style> /* #being-monostack-pays-best-block */
+          #being-monostack-pays-best-block {
+            padding: 80px 150px;
+            padding-top: 0;
+          }
+          #being-monostack-pays-best-block .headline {
+            font-weight: bold;
+            font-size: 40px;
+            margin: 0;
+            margin-bottom: 60px;
+            text-transform: none;
+          }
+          #being-monostack-pays-best-block .headline::after, #being-monostack-pays-best-block .headline::before {
+            display: none;
+          }
+          #being-monostack-pays-best-block .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+          }
+          #being-monostack-pays-best-block .text-wrapper {
+            width: 50%;
+            font-weight: normal;
+            font-size: 19px;
+            line-height: 28px;
+          }
+          #being-monostack-pays-best-block .text-wrapper p {
+            position: relative;
+            padding-top: 15px;
+            margin-bottom: 40px;
+          }
+          #being-monostack-pays-best-block .text-wrapper p::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 24px;
+            background: #6CBD45;
+          }
+          #being-monostack-pays-best-block .quote-wrapper {
+            position: relative;
+            width: 36%;
+            background: #F9F9F9;
+            padding: 30px 60px;
+            display: flex;
+            flex-direction: column;
+          }
+          .quote-wrapper svg.arrow {
+            position: absolute;
+            height: 20px;
+            bottom: -19px;
+            left: 15%;
+          }
+          .quote-wrapper svg.arrow path {
+            fill: #F9F9F9;
+          }
+          #being-monostack-pays-best-block .quote-wrapper svg.quote-icon {
+            position: absolute;
+            width: 35px;
+            top: 25px;
+            left: 15px;
+          }
+          #being-monostack-pays-best-block .quote-wrapper .quote-text {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 26px;
+            color: #2E2E2E;
+          }
+          #being-monostack-pays-best-block .quote-wrapper .quote-autor {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 10px;
+          }
+          #being-monostack-pays-best-block .quote-wrapper .quote-autor img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            margin-right: 15px;
+          }
+          #being-monostack-pays-best-block .quote-wrapper .quote-autor .details .name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2E2E2E;
+          }
+          #being-monostack-pays-best-block .quote-wrapper .quote-autor .details .position {
+            font-weight: normal;
+            font-size: 14px;
+            color: #A6A6A6;
+          }
+          #being-monostack-pays-best-block .quote-wrapper .quote-autor .details .position a {
+            color: #6CBD45;
+            text-decoration: none;
+          }
+          /* /#being-monostack-pays-best-block */
+        </style>
+
+        <style> /* #struct-industries-block */
+          #struct-industries-block {
+            background: #F9F9F9;
+          }
+          #struct-industries-block .list.square {
+            margin: 0;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+          }
+          #struct-industries-block .list.square .list_item {
+            margin: 0;
+            width: 13.2%;
+            flex-basis: auto;
+          }
+          #struct-industries-block .button-wrapper {
+            padding-bottom: 80px;
+          }
+          #struct-industries-block .button-wrapper a.request-quote-btn {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 15px 25px;
+            background: #6CBD45;
+            border: none;
+            font-weight: normal;
+            font-size: 13px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            text-decoration: none;
+          }
+          /* /#struct-industries-block */
+        </style>
+
+        <style> /* #sprint-scheme-block */
+          #sprint-scheme-block {
+            padding: 80px;
+            color: #2E2E2E;
+          }
+          #sprint-scheme-block .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+          }
+          #sprint-scheme-block .scheme-description {
+            width: calc(45% - 20px);
+          }
+          #sprint-scheme-block .scheme-description .headline {
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 56px;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-bottom: 0;
+          }
+          #sprint-scheme-block .scheme-description .headline::before, #sprint-scheme-block .headline::after {
+            display: none;
+          }
+          #sprint-scheme-block .scheme-description p.description-text {
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 28px;
+            margin: 20px 0;
+          }
+          #sprint-scheme-block .scheme-description .sertificate-images img {
+            width: 65px;
+            height: 65px;
+            margin-right: 25px;
+          }
+          #sprint-scheme-block .scheme-description .sertificate-images {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+          }
+          #sprint-scheme-block .scheme-image {
+            width: 55%;
+          }
+          #sprint-scheme-block .scheme-image img {
+            width: 100%;
+          }
+          @media (max-width: 1100px) {
+            #sprint-scheme-block .content {
+              flex-wrap: wrap;
+            }
+            #sprint-scheme-block .scheme-description, #sprint-scheme-block .scheme-image {
+              width: 100%;
+            }
+          }
+          /* /#sprint-scheme-block */
+        </style>
+
+        <style> /* #struct-case-studies-block */
+          #struct-case-studies-block {
+            padding: 50px 0;
+            background: #F9F9F9;
+          }
+          #struct-case-studies-block .content-container {
+            padding-bottom: 0;
+          }
+          #struct-case-studies-block .headline {
+            font-weight: bold;
+            font-size: 40px;
+            text-transform: none;
+            letter-spacing: 0;
+            width: 100%;
+            text-align: center;
+          }
+          #struct-case-studies-block .headline::before, #struct-case-studies-block .headline::after {
+            display: none;
+          }
+          @media (min-width: 1024px) {
+            #struct-case-studies-block .dev-cases-list__item {
+              margin-bottom: 90px;
+            }
+          }
+          /* /#struct-case-studies-block */
+        </style>
+
+        <style> /* #struct-case-study-block */
+          #struct-case-study-block .content-container {
+            padding-top: 0;
+          }
+          #struct-case-study-block a.check-full-portfolio.btn {
+            color: #6CBD45;
+            border: 1px solid #6CBD45;
+            background: transparent;
+            padding: 15px 25px;
+            font-weight: normal;
+            font-size: 13px;
+            text-transform: uppercase;
+          }
+          /* /#struct-case-study-block */
+        </style>
+
+        <style> /* #start-your-project-now */
+          #start-your-project-now {
+            padding: 50px 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            box-sizing: content-box;
+          }
+          #start-your-project-now .column-info {
+            width: 50%;
+            min-width: 530px;
+          }
+          #start-your-project-now .column-info .headline {
+            font-weight: bold;
+            font-size: 40px;
+            text-transform: none;
+            letter-spacing: 0;
+            margin: 0;
+          }
+          #start-your-project-now .column-info .headline::before, #start-your-project-now .column-info .headline::after {
+            display: none;
+          }
+          #start-your-project-now .column-info .description {
+            font-weight: normal;
+            font-size: 18px;
+            color: #757575;
+            margin-top: 15px;
+            margin-bottom: 25px;
+          }
+          #start-your-project-now .column-info .clutch-info {
+            display: flex;
+            align-items: center;
+          }
+          #start-your-project-now .column-info .clutch-info img {
+            width: 100px;
+            margin-right: 15px;
+          }
+          #start-your-project-now .column-info .clutch-info .clutch-widget {
+            display: block;
+          }
+          #start-your-project-now .column-btn {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+          }
+          #start-your-project-now .column-btn a.btn.lead-to-pricing {
+            display: inline-block;
+            padding: 15px 25px;
+            width: 90%;
+            min-width: 170px;
+            max-width: 300px;
+            border: none;
+            background: #6CBD45;
+            color: white;
+            font-weight: normal;
+            font-size: 13px;
+            text-transform: uppercase;
+          }
+          /* /#start-your-project-now */
+        </style>
+
+        <style> /* #partner-with-us */
+          #partner-with-us {
+            padding: 80px;
+            background: #F9F9F9;
+          }
+          #partner-with-us h3.headline {
+            font-weight: bold;
+            font-size: 40px;
+            margin: 0;
+            margin-bottom: 50px;
+            text-transform: none;
+            letter-spacing: 0;
+            text-align: center;
+            width: 100%;
+          }
+          #partner-with-us h3.headline::before, #partner-with-us h3.headline::after {
+            display: none;
+          }
+          #partner-with-us .partner-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: flex-start;
+          }
+          #partner-with-us .partner-items .item {
+            width: 50%;
+            margin: 0;
+            padding: 0;
+            padding-right: 20px;
+            margin-bottom: 50px;
+          }
+          #partner-with-us .partner-items .item .head {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+          }
+          #partner-with-us .partner-items .item .head img {
+            width: 65px;
+            height: 65px;
+            margin-right: 15px;
+          }
+          #partner-with-us .partner-items .item .head .title {
+            font-weight: 900;
+            font-size: 18px;
+            color: #2e2e2e;
+          }
+          #partner-with-us .partner-items .item .description-text {
+            margin-left: 80px;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 30px;
+          }
+          /* /#partner-with-us */
+        </style>
+
+        <style> /* #struct-testimonial-three-card-block */
+          #struct-testimonial-three-card-block .headline {
+            font-weight: bold;
+            font-size: 40px;
+            margin: 0;
+            margin-top: 60px;
+            text-transform: none;
+            letter-spacing: 0;
+            text-align: center;
+            width: 100%;
+          }
+          #struct-testimonial-three-card-block h3.headline::before, #struct-testimonial-three-card-block h3.headline::after {
+            display: none;
+          }
+          /* /#struct-testimonial-three-card-block */
+        </style>
+      <!-- /new keradans styles -->
+
+      <!-- keradan add jQuery for slider -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js" integrity="sha256-Ap4KLoCf1rXb52q+i3p0k2vjBsmownyBTE1EqlRiMwA=" crossorigin="anonymous"></script>
+      <!-- /keradan add jQuery for slider -->
+  </head>
+
+  <body>
+    <div id="ds-wrapper" class="ds-wrapper">        
+
+      <nav id="nav" class="l-nav  ">
+        <div class="l-nav__container ">
+          <a href="https://djangostars.com/" class="l-nav__logo">
+            <img class="l-nav__logo-color-white"
+                 src="https://djangostars.com/static/assets/svg/ds-logo-white.825099c5417e.svg"
+                 alt="Django Stars">
+            <img class="l-nav__logo-color-black"
+                 itemprop="logo"
+                 src="https://djangostars.com/static/assets/svg/ds-logo-black.59cea877395c.svg"
+                 alt="Django Stars">
+          </a>
+
+          <ul class="l-nav__menu-list">
+            <div class="main-menu">
+                <li class="l-nav__menu-item">
+                  <a class="l-nav__menu-link"
+                     href="https://djangostars.com/company/">
+                      <span>Company</span>
+                      Company
+                  </a>
+                   <i class="menu-btn__expand"></i> 
+
+                  
+                  
+                    <div class="sub-menu-container">
+                      <ul class="l-nav__menu-item-sub-menu">
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-3">
+                              
+                                <a href="https://djangostars.com/company/team/"
+                                   class="sub-menu-item__link">
+                                  <p>Team</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      We’re on the ground, helping to build successful and scalable businesses
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-3">
+                              
+                                <a href="https://djangostars.com/company/testimonials/"
+                                   class="sub-menu-item__link">
+                                  <p>Testimonials</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      Check out what clients around the globe say about us
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-3">
+                              
+                                <a href="https://djangostars.com/company/careers/"
+                                   class="sub-menu-item__link">
+                                  <p>Careers</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      We’re the team building productsthat rock the market
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                      </ul>
+
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div>
+                </li>
+                <li class="l-nav__menu-item">
+                  <a class="l-nav__menu-link"
+                     href="https://djangostars.com/services/">
+                      <span>Services</span>
+                      Services
+                  </a>
+                   <i class="menu-btn__expand"></i> 
+
+                  
+                  
+                    <div class="sub-menu-container">
+                      <ul class="l-nav__menu-item-sub-menu">
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-5 ">
+                              
+                                <a href="https://djangostars.com/services/software-consultancy/"
+                                   class="sub-menu-item__link">
+                                  <p>Software Consultancy</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      Unleash your product’s potential with our expertise
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-5 ">
+                              
+                                <a href="https://djangostars.com/services/web-development/"
+                                   class="sub-menu-item__link">
+                                  <p>Web Development</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      Build your web solution from scratch or make your business go digital
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-5 ">
+                              
+                                <a href="https://djangostars.com/services/mobile-app-development/"
+                                   class="sub-menu-item__link">
+                                  <p>Mobile App Development</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      Get a fully functioning app your customers will love
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-5 ">
+                              
+                                <a href="https://djangostars.com/services/uxui-design/"
+                                   class="sub-menu-item__link">
+                                  <p>UX/UI Design</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      Implement rich UX/UI with high aesthetic &amp; functional standards
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-5 ">
+                              
+                                <a href="https://djangostars.com/services/quality-assurance/"
+                                   class="sub-menu-item__link">
+                                  <p>Quality Assurance</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      We help our clients enter the market with flawless products
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                      </ul>
+
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div>
+                </li>
+                <li class="l-nav__menu-item">
+                  <a class="l-nav__menu-link"
+                     href="https://djangostars.com/solutions/">
+                      <span>Solutions</span>
+                      Solutions
+                  </a>
+                </li>
+                <li class="l-nav__menu-item">
+                  <a class="l-nav__menu-link"
+                     href="https://djangostars.com/industries/">
+                      <span>Industries</span>
+                      Industries
+                  </a>
+                   <i class="menu-btn__expand"></i> 
+                    <div class="sub-menu-container">
+                      <ul class="l-nav__menu-item-sub-menu">
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-6">
+                              
+                                <a href="https://djangostars.com/industries/fintech/"
+                                   class="sub-menu-item__link">
+                                  <p>Finance &amp; Banking</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      Building digital solutions that disrupt financial markets
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-6">
+                              
+                                <a href="https://djangostars.com/industries/travel/"
+                                   class="sub-menu-item__link">
+                                  <p>Travel &amp; Booking</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      Our clients become travel industry leaders by using solutions we help them build.
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-6">
+                              
+                                <a href="https://djangostars.com/industries/transportation/"
+                                   class="sub-menu-item__link">
+                                  <p>Taxi &amp; Transportation</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      Transforming your ideas into game-changing products
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-6">
+                              
+                                <a href="https://djangostars.com/industries/proptech-real-estate/"
+                                   class="sub-menu-item__link">
+                                  <p>Proptech &amp; Real Estate</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      We build PropTech solutions that help our clients succeed
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-6">
+                              
+                                <a href="https://djangostars.com/industries/healthcare-fitness/"
+                                   class="sub-menu-item__link">
+                                  <p>Healthcare &amp; Fitness</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      We build solutions that change lives for the better
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                          
+                            <li class="sub-menu-item sub-menu-item-6">
+                              
+                                <a href="https://djangostars.com/industries/e-commerce-marketplaces/"
+                                   class="sub-menu-item__link">
+                                  <p>E-commerce &amp; Marketplaces</p>
+                                  <p class="sub-menu-item__desc">
+                                    
+                                      We build marketplaces that sellers and buyers actually use
+                                    
+                                  </p>
+                                </a>
+                              
+                            </li>
+                          
+                        
+                      </ul>
+
+                    </div>
+                </li>
+                <li class="l-nav__menu-item">
+                  <a class="l-nav__menu-link"
+                     href="https://djangostars.com/approach/">
+                      <span>Approach</span>
+                      Approach
+                  </a>
+                </li>
+                <li class="l-nav__menu-item">
+                  <a class="l-nav__menu-link"
+                     href="https://djangostars.com/case-studies/">
+                      <span>Case Studies</span>
+                      Case Studies
+                  </a>
+                </li>
+                <li class="l-nav__menu-item">
+                  <a class="l-nav__menu-link"
+                     href="https://djangostars.com/blog/">
+                      <span>Blog</span>
+                      Blog
+                  </a>
+                </li>
+            </div>
+
+            <div class="menu-button">
+                <li class="l-nav__menu-item">
+                  <a class="btn btn-primary"
+                     href="https://djangostars.com/get-in-touch/">Get in Touch</a>
+                </li>
+            </div>
+
+          </ul>
+          <button class="l-nav__hamburger"><span></span></button>
+        </div>
+      </nav>
+
+      <!-- keradans markup STARTS here: -->
+      <div class="l-header main-teaser">
+        <div class="l-header__bg-img absolute-fill bg_fill"></div>
+        <div class="blurred vh-fix">
+          <div class="l-header__content">
+            <h1>#1 Django development<br>in the world</h1>
+            <p class="description">Unleash your product’s potential with our expertise</p>
+            <div class="achievements">
+              <div class="top-3-text">Top-3</div>
+              <div class="according-to-clutch">
+                <span>Python developers,<br>according to</span>
+                <img src="img/clutch-logo.png" class="clutch-logo">
+              </div>
+              <img src="img/clutch-badge1.png" class="clutch-badge">
+              <img src="img/clutch-badge2.png" class="clutch-badge">
+              <img src="img/clutch-badge3.png" class="clutch-badge">
+            </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="services-list simple-block bg-gray" id="what-are-you-looking-for-block">
+        <div class="services-list__heading block-content">
+          <h2 class="headline">What are you looking for?</h2>
+        </div>
+        <div class="services-container">
+          <a href="#">
+            <img src="https://djangostars.com/media/svg_images/5d/e0/d6/5de0d6f5256d48fd890dbb2eef7380d8.svg" alt="Web development">
+            <span>Web development</span>
+          </a>
+          <a href="#">
+            <img src="https://djangostars.com/media/svg_images/ad/da/09/adda0948891945be9517988fbea335ec.svg" alt="UX/UI Design">
+            <span>UX/UI Design</span>
+          </a>
+          <a href="#">
+            <img src="https://djangostars.com/media/svg_images/b9/96/16/b996167330d440c49eb1bdc7b2239252.svg" alt="Mobile Development">
+            <span>Mobile Development</span>
+          </a>
+          <a href="#">
+            <img src="https://djangostars.com/media/images/qa3x_P6BaIJe.width-48.png" alt="Software Consultancy">
+            <span>Software Consultancy</span>
+          </a>
+        </div>
+      </div>
+
+      <div id="how-we-help-block">
+        <div class="text-description">
+          <p>We help our customers create demanded products, enter the markets, and transform into industry-leading digital enterprises.</p>
+          <p style="margin-top: 50px;">We act as a web development company and software consultancy, and build durable partnerships to enforce long-term prosperity for our clients.</p>
+        </div>
+        <style>
+          #how-we-help-block .image-headline {
+            background-image: url('img/help_bg.jpg');
+            background-image: -webkit-image-set(url(img/help_bg.jpg) 2x, url(img/help_bg.jpg) 3x);
+            background-image: image-set(url(img/help_bg.jpg) 2x, url(img/help_bg.jpg) 3x);
+          }
+        </style>
+        <div class="image-headline" >
+          <p>
+            We’re on the ground,<br>
+            <span class="green-line-title">helping to build</span> successful<br>
+            and scalable businesses
+          </p>
+        </div>
+      </div>
+
+      <div class="ds-python__experience simple-block block-content" id="python-experience">
+        <div class="ds-python__solutions">
+          <div class="ds-python__solutions-content">
+            <div class="content-column clutch">
+              <div class="head">
+                <div class="big">Top-3</div>
+                <div class="small">Django and Python developers,<br>according to Clutch.co</div>
+              </div>
+              <div class="clutch-reviews">
+                <img src="img/clutch-reviews.png" alt="">
+              </div>
+            </div>
+            <div class="ds-python__solutions-content-description content-description">
+              <h3 class="ds-python__solutions-heading subheading">Django Development Services</h3>
+              <p class="description">With Django framework we are able to design almost<br>anything our clients need and build MVPs faster.</p>
+              <p class="list-headline">How our Django expertise helps our partners:</p>
+              <div class="rich-text">
+                <ul>
+                  <li>Faster time-to-market</li>
+                  <li>High security</li>
+                  <li>Easy scaling</li>
+                  <li>Smooth support process</li>
+                </ul>
+              </div>
+              <div class="ds-python__solutions-images-links images-links">
+                <a class="images-links-item" href="https://www.python.org/psf/">
+                   <img srcset="https://djangostars.com/media/images/psf-logo-2-x2x.width-250.png,  2x"
+                        src="https://djangostars.com/media/images/psf-logo-2-x2x.width-250.png"
+                        alt="Python Software Foundation">
+                </a>
+                <a class="images-links-item" href="https://www.djangoproject.com/foundation/">
+                   <img srcset="https://djangostars.com/media/images/django-sf-logo.width-250.png,  2x"
+                        src="https://djangostars.com/media/images/django-sf-logo.width-250.png"
+                        alt="Django Software Foundation">
+                </a>
+                <a class="images-links-item" href="https://2019.djangocon.eu/">
+                   <img srcset="https://djangostars.com/media/images/djangocon-eu-2019-logo.width-250.png,  2x"
+                        src="https://djangostars.com/media/images/djangocon-eu-2019-logo.width-250.png"
+                        alt="DjangoCon EU 2019">
+                </a>
+                <a class="images-links-item" href="https://djangogirls.org/">
+                   <img srcset="https://djangostars.com/media/images/logo-bigger2x.width-250.png,  2x"
+                        src="https://djangostars.com/media/images/logo-bigger2x.width-250.png"
+                        alt="Django Girls">
+                </a>
+              </div>
+            </div>
+            <div class="reviews-slider-wrapper">
+              <button class="prev">
+                <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
+                  <path d="M15.1006 5.74527L15.1256 5.75074L4.41913 5.75074L7.78485 2.3776C7.94966 2.21292 8.04007 1.98983 8.04007 1.75568C8.04007 1.52153 7.94966 1.30001 7.78485 1.13493L7.26114 0.610964C7.09646 0.446281 6.87701 0.355225 6.643 0.355225C6.40885 0.355225 6.18927 0.445631 6.02459 0.610314L0.255093 6.37929C0.0897596 6.54462 -0.000646921 6.76485 3.48506e-06 6.99913C-0.000646921 7.2347 0.0897596 7.45506 0.255093 7.62014L6.02459 13.3896C6.18927 13.5542 6.40872 13.6447 6.643 13.6447C6.87701 13.6447 7.09646 13.5541 7.26114 13.3896L7.78485 12.8657C7.94966 12.7012 8.04007 12.4817 8.04007 12.2475C8.04007 12.0135 7.94966 11.8055 7.78485 11.6409L4.38114 8.24895H15.1126C15.5948 8.24895 16 7.83334 16 7.35139V6.61031C16 6.12836 15.5828 5.74527 15.1006 5.74527Z"/>
+                </svg>
+              </button>
+              <div class="slider" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "prevArrow": "#python-experience .reviews-slider-wrapper button.prev", "nextArrow": "#python-experience .reviews-slider-wrapper button.next"}'>
+                <div>
+                  <div class="python-experience-slide">
+                    <div class="inner">
+                      <img class="authors-img" src="https://djangostars.com/media/images/amitabh-ghatak3x.width-160.png" alt="">
+                      <div class="info">
+                        <div class="testimonial-text">
+                          Django Stars not only delivers top-notch performance in programming but - thanks to a great team of smart minds – Django Stars are also a most valuable business partner for us.
+                        </div>
+                        <div class="c-testimonial-item">
+                          <div class="c-testimonial-item__clutch">
+                            <div class="c-testimonial-item__clutch-logo"></div>
+                            <div class="c-testimonial-item__clutch-rate">5.0</div>
+                            <div class="c-testimonial-item__clutch-stars"><ul><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li></ul></div>
+                          </div>
+                        </div>
+                        <div class="authors-name">
+                          Amitabh Ghatak
+                        </div>
+                        <div class="authors-position">
+                          CEO and Co-Founder of <a href="#">Moneypark</a>
+                        </div>
+                        <div class="authors-place">
+                          Zürich
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="python-experience-slide">
+                    <div class="inner">
+                      <img class="authors-img" src="https://djangostars.com/media/images/joel2018.width-160.jpg" alt="">
+                      <div class="info">
+                        <div class="testimonial-text">
+                          Django Stars not only delivers top-notch performance in programming but - thanks to a great team of smart minds – Django Stars are also a most valuable business partner for us.
+                        </div>
+                        <div class="c-testimonial-item">
+                          <div class="c-testimonial-item__clutch">
+                            <div class="c-testimonial-item__clutch-logo"></div>
+                            <div class="c-testimonial-item__clutch-rate">5.0</div>
+                            <div class="c-testimonial-item__clutch-stars"><ul><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li></ul></div>
+                          </div>
+                        </div>
+                        <div class="authors-name">
+                          Joel Perrenoud
+                        </div>
+                        <div class="authors-position">
+                          CEO and Co-Founder of <a href="#">Moneypark</a>
+                        </div>
+                        <div class="authors-place">
+                          Zürich
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="python-experience-slide">
+                    <div class="inner">
+                      <img class="authors-img" src="https://djangostars.com/media/images/Benjamin-Tacquet_7euP2vJ.width-160.jpg" alt="">
+                      <div class="info">
+                        <div class="testimonial-text">
+                          Django Stars not only delivers top-notch performance in programming but - thanks to a great team of smart minds – Django Stars are also a most valuable business partner for us.
+                        </div>
+                        <div class="c-testimonial-item">
+                          <div class="c-testimonial-item__clutch">
+                            <div class="c-testimonial-item__clutch-logo"></div>
+                            <div class="c-testimonial-item__clutch-rate">5.0</div>
+                            <div class="c-testimonial-item__clutch-stars"><ul><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li><li class="c-testimonial-item__clutch-star active"></li></ul></div>
+                          </div>
+                        </div>
+                        <div class="authors-name">
+                          Benjamin Tacquet
+                        </div>
+                        <div class="authors-position">
+                          CEO and Co-Founder of <a href="#">Moneypark</a>
+                        </div>
+                        <div class="authors-place">
+                          Zürich
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="next">
+                <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
+                  <path d="M0.899623 8.25473L0.874647 8.24926H11.5811L8.2154 11.6224C8.05058 11.7871 7.96018 12.0102 7.96018 12.2443C7.96018 12.4785 8.05058 12.7 8.2154 12.8651L8.7391 13.389C8.90379 13.5537 9.12323 13.6448 9.35725 13.6448C9.5914 13.6448 9.81097 13.5544 9.97566 13.3897L15.7452 7.62071C15.9105 7.45538 16.0009 7.23515 16.0002 7.00087C16.0009 6.7653 15.9105 6.54494 15.7452 6.37986L9.97566 0.61037C9.81097 0.445817 9.59153 0.355281 9.35725 0.355281C9.12323 0.355281 8.90379 0.445947 8.7391 0.61037L8.2154 1.13434C8.05058 1.29876 7.96018 1.51834 7.96018 1.75248C7.96018 1.9865 8.05058 2.1945 8.2154 2.35905L11.6191 5.75105L0.887655 5.75105C0.405444 5.75105 0.000240326 6.16666 0.000240326 6.64861V7.38969C0.000240326 7.87164 0.417412 8.25473 0.899623 8.25473Z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="being-monostack-pays-best-block">
+        <h3 class="headline">Being monostack pays best</h3>
+        <div class="content">
+          <div class="text-wrapper">
+            <p>We're a Python & Django development company. We’ve worked with Python and Django for 12 years, dealt with all use cases, and know what to expect, what might come out later and how to deal with it.</p>
+            <p>We don’t claim our Python + Django combo is a perfect match for any product. But our focus on this stack turns out to be a huge benefit when it comes to development.  </p>
+          </div>
+          <div class="quote-wrapper">
+            <svg class="arrow" width="134" height="44" viewBox="0 0 134 44" fill="none"><path d="M12.5 12C17.75 -1.52588e-05 5.5 -1.52588e-05 5.5 -1.52588e-05H134C78.5968 39.3655 2 43.7661 2 43.7661C2 43.7661 2.69711e-06 43.7661 0.241502 41C0.483001 38.2339 8.49483 21.1547 12.5 12Z"/></svg>
+
+            <svg class="quote-icon" width="27" height="20" viewBox="0 0 27 20" fill="none"><path d="M5.11827 10.0962C5.41694 10.0536 5.82227 10.0322 6.33427 10.0322C7.95561 10.0322 9.17161 10.5016 9.98227 11.4402C10.8356 12.3362 11.2623 13.4669 11.2623 14.8322C11.2623 16.2829 10.7716 17.4989 9.79027 18.4802C8.85161 19.4616 7.55027 19.9522 5.88627 19.9522C4.17961 19.9522 2.81427 19.4829 1.79027 18.5442C0.766273 17.5629 0.254273 16.1549 0.254273 14.3202C0.254273 11.8456 1.00094 9.34958 2.49427 6.83224C3.98761 4.27224 5.82227 2.13891 7.99827 0.432243L9.27827 1.77624C6.50494 4.72024 5.11827 7.49357 5.11827 10.0962ZM20.0943 10.0962C20.3929 10.0536 20.7983 10.0322 21.3103 10.0322C22.9316 10.0322 24.1476 10.5016 24.9583 11.4402C25.8116 12.3362 26.2383 13.4669 26.2383 14.8322C26.2383 16.2829 25.7476 17.4989 24.7663 18.4802C23.8276 19.4616 22.5263 19.9522 20.8623 19.9522C19.1556 19.9522 17.7903 19.4829 16.7663 18.5442C15.7423 17.5629 15.2303 16.1549 15.2303 14.3202C15.2303 11.8456 15.9769 9.34958 17.4703 6.83224C18.9636 4.27224 20.7983 2.13891 22.9743 0.432243L24.2543 1.77624C21.4809 4.72024 20.0943 7.49357 20.0943 10.0962Z" fill="#6CBD45"/></svg>
+            <p class="quote-text">Their focus on Python is very apparent in their efficiency and interactions with me. There are no distractions, and they’re very focused on what I need.</p>
+            <div class="quote-autor">
+              <img src="https://djangostars.com/media/images/joel2018.width-160.jpg">
+              <div class="details">
+                <div class="name">Michael McCarthy</div>
+                <div class="position">CEO and Founder <a href="#">Repositax</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="industries b-view-all" id="struct-industries-block">
+        <div class="block-content">
+          <h3 class="subheading"><p>Solutions we create using our clients’ great<br>ideas and our brilliant team</p></h3>
+          <ul class="list square">
+              <li class="list_item industries_item b-view-all__item animated fade_in sps--blw">
+                <div class="industries_img" style="background-image: url('img/solutions/img-1.jpg')"></div>
+                <div class="content">
+                  <p>Enterprise<br>and Intranet<br>Solutions</p>
+                    <a class="read_more" href="#">View industry <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+              <li class="list_item industries_item b-view-all__item animated fade_in sps--blw">
+                <div class="industries_img" style="background-image: url('img/solutions/img-2.jpg')"></div>
+                <div class="content">
+                  <p>High-Load<br>Applications</p>
+                    <a class="read_more" href="#">View industry <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+              <li class="list_item industries_item b-view-all__item animated fade_in sps--blw">
+                <div class="industries_img" style="background-image: url('img/solutions/img-3.jpg')"></div>
+                <div class="content">
+                  <p>E-commerce<br>Solutions</p>
+                    <a class="read_more" href="#">View industry <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+              <li class="list_item industries_item b-view-all__item animated fade_in sps--blw">
+                <div class="industries_img" style="background-image: url('img/solutions/img-4.jpg')"></div>
+                <div class="content">
+                  <p>Booking Engines</p>
+                    <a class="read_more" href="#">View industry <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+              <li class="list_item industries_item b-view-all__item animated fade_in sps--blw">
+                <div class="industries_img" style="background-image: url('img/solutions/img-5.jpg')"></div>
+                <div class="content">
+                  <p>SaaS</p>
+                    <a class="read_more" href="#">View industry <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+              <li class="list_item industries_item b-view-all__item animated fade_in sps--blw">
+                <div class="industries_img" style="background-image: url('img/solutions/img-6.jpg')"></div>
+                <div class="content">
+                  <p>Geo Based Apps</p>
+                    <a class="read_more" href="#">View industry <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+              <li class="list_item industries_item b-view-all__item animated fade_in sps--blw">
+                <div class="industries_img" style="background-image: url('img/solutions/img-7.jpg')"></div>
+                <div class="content">
+                  <p>CRM and ERP<br>Systems</p>
+                    <a class="read_more" href="#">View industry <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+          </ul>
+        </div>
+        <div class="button-wrapper">
+          <a href="#" class="request-quote-btn">Request a quote for your project</a>
+        </div>
+      </div>
+
+      <div id="sprint-scheme-block">
+        <div class="content">
+          <div class="scheme-description">
+            <h3 class="headline">We are certified according<br>to top industry standards</h3>
+            <p class="description-text">
+              Our neatly organized development process allows us<br>to deliver topnotch, well-documented products faster.
+            </p>
+            <div class="sertificate-images">
+              <img src="img/sertificates/1.png" alt="">
+              <img src="img/sertificates/2.png" alt="">
+              <img src="img/sertificates/3.png" alt="">
+            </div>
+          </div>
+          <div class="scheme-image">
+            <img src="img/sprint_sheme.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-cases" id="struct-case-studies-block">
+        <h3 class="headline">
+          Our portfolio
+        </h3>
+        <div class="content-container">
+          <ul class="dev-cases-list ">
+            <li class="dev-cases-list__item">
+              <div class="dev-cases-list__info info animated fade_in">
+                <img alt="Molo" height="120" src="https://djangostars.com/media/images/molo-logo.original.png" width="420">
+                <div class="description">
+                  <div class="rich-text">
+                    <p><b>Molo</b> is the UK’s first digital mortgage solution. It makes it faster and easier to apply for and get a mortgage. Together with the Molo team, we’ve created a mortgage calculator, an automated advisory system, and precise valuation and legal maintenance tools.</p>
+                  </div>
+                </div>
+                <a class="country" href="#"><span class="flag-icon flag-icon-gb"></span> United Kingdom</a>
+                <a class="read_more" href="#">View case study <i class="icon-bt-next"></i></a>
+              </div>
+              <div class="dev-cases-list__images">
+                <img class="dev-cases-list__img-main" src="https://djangostars.com/media/images/devices_moneypark_fintech_ih0CU8l.original.png" alt="Molo">
+                <img class="dev-cases-list__img-bg" src="https://djangostars.com/media/images/molo-bs2x.original.png" alt="Molo">
+              </div>
+            </li>
+            <li class="dev-cases-list__item">
+              <div class="dev-cases-list__info info animated fade_in sps--blw">
+                <img alt="MoneyPark" height="88" src="https://djangostars.com/media/images/moneypark_C6XLJnR_MWXM3AB.original.png" width="322">
+                <div class="description">
+                  <div class="rich-text">
+                    <p><b>Money Park</b> is the #1 mortgage broker in the Swiss market. It provides personalized financial advice. Together with Money Park, we’ve developed several CRM solutions, property evaluation interfaces, a Dynamic Discount Rules engine, mechanisms for data exchanging with financial institutions, and several calculators.</p>
+                  </div>
+                </div>
+                <a class="country" href="#"><span class="flag-icon flag-icon-sw"></span> Switzerland</a>
+                <a class="read_more" href="#">View case study <i class="icon-bt-next"></i></a>
+              </div>
+              <div class="dev-cases-list__images">
+                <img class="dev-cases-list__img-main" src="https://djangostars.com/media/images/devices_mmp_fintech.original.png" alt="MoneyPark">
+                <img class="dev-cases-list__img-bg" src="https://djangostars.com/media/images/moneypark-sb2x.original.png" alt="MoneyPark">
+              </div>
+            </li>
+            <li class="dev-cases-list__item">
+              <div class="dev-cases-list__info info animated fade_in">
+                <img alt="PADI Travel" height="120" src="https://djangostars.com/media/images/padi-travel3x.original.png" width="576">
+                <div class="description">
+                  <div class="rich-text">
+                    <p><b>PADI Travel</b> is the world’s #1 booking platform for scuba divers. It brings together more than 200 000 scuba divers, 10 000 operators, 300 liveaboards, and 900 destinations. Together with PADI Travel, we’ve developed a high-load booking engine with advanced filtering, a custom shopping mechanism, a PADI marketplace, and an internal CRM system.</p>
+                  </div>
+                </div>
+                <a class="country" href="#"><span class="flag-icon flag-icon-sw"></span> Switzerland</a>
+                <a class="read_more" href="#">View case study <i class="icon-bt-next"></i></a>
+              </div>
+              <div class="dev-cases-list__images">
+                <img class="dev-cases-list__img-main" src="https://djangostars.com/media/images/mac-clear-minds3x_Mqx3SBS.original.png" alt="Clear Minds">
+                <img class="dev-cases-list__img-bg" src="https://djangostars.com/media/images/padi-travel-sb2x.original.png" alt="PADI Travel">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="bg-gray" id="struct-case-study-block">
+        <div class="content-container">
+          <div class="case_studies-list">
+            <ul class="row">
+              <li class="case-item col-lg-4 animated fade_in">
+                <div class="case-item__image-wrapper">
+                  <a href="#">
+                    <div class="case-item__image bg_fill" style="background-image: url('https://djangostars.com/media/images/clear-minds_nNSxZ8j.width-900.jpg')"></div>
+                  </a>
+                </div>
+                <div class="case-item__card">
+                  <div class="row case-item__top-info">
+                    <a href="#" class="case-item__industry">Fintech</a>
+                    <a href="#" class="case-item__country"><span class="case-item__country-text">Switzerland</span></a>
+                  </div>
+                  <div class="case-item__text">
+                    <div class="rich-text">
+                      <p><b>Clear Minds</b> is a digital investment platform that handles advisory and investment processes with common sense.</p>
+                    </div>
+                  </div>
+                  <a class="case-item__read-more read_more" href="#">Read more <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+              <li class="case-item col-lg-4 animated fade_in">
+                <div class="case-item__image-wrapper">
+                  <a href="#">
+                    <div class="case-item__image bg_fill" style="background-image: url('https://djangostars.com/media/images/header_azyan.width-900.jpg')"></div>
+                  </a>
+                </div>
+                <div class="case-item__card">
+                  <div class="row case-item__top-info">
+                    <a href="#" class="case-item__industry">Taxi & Transportation</a>
+                    <a href="#" class="case-item__country"><span class="case-item__country-text">Jordan</span></a>
+                  </div>
+                  <div class="case-item__text">
+                    <div class="rich-text">
+                      <p><b>Azyan</b> is a food delivery service that is delivering thousands of items a day in Amman in less than 20 minutes.</p>
+                    </div>
+                  </div>
+                  <a class="case-item__read-more read_more" href="#">Read more <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+              <li class="case-item col-lg-4 animated fade_in">
+                <div class="case-item__image-wrapper">
+                  <a href="#">
+                    <div class="case-item__image bg_fill" style="background-image: url('https://djangostars.com/media/images/main-image.width-900.jpg')"></div>
+                  </a>
+                </div>
+                <div class="case-item__card">
+                  <div class="row case-item__top-info">
+                    <a href="#" class="case-item__industry">Health Сare & Fitness</a>
+                    <a href="#" class="case-item__country"><span class="case-item__country-text">United States</span></a>
+                  </div>
+                  <div class="case-item__text">
+                    <div class="rich-text">
+                      <p><b>Copenhagen Fintech</b> is an accelerator that helps both entrepreneurs and investors.</p>
+                    </div>
+                  </div>
+                  <a class="case-item__read-more read_more" href="#">Read more <i class="icon-bt-next"></i></a>
+                </div>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary check-full-portfolio">Check Full Portfolio</a>
+          </div>
+        </div>
+      </section>
+
+      <div id="start-your-project-now">
+        <div class="column-info">
+          <h3 class="headline">Start your project now</h3>
+          <p class="description">TOP-3 Django & Python Software development Agency </p>
+          <div class="clutch-info">
+            <img src="img/clutch-badge1.png" class="clutch-badge">
+            <img src="img/clutch-badge2.png" class="clutch-badge">
+            <img src="img/clutch-badge3.png" class="clutch-badge">
+            <div class="clutch-widget">
+              <iframe id="iframe-0.6411843167816167" width="100%" src="https://widget.clutch.co/widgets/get/2?ref_domain=djangostars.com&amp;uid=21371&amp;ref_path=/case-studies/" height="62px" style="border: none; display: block;" title="Django Stars Clutch Review Widget 2"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="column-btn">
+          <a href="#" class="btn lead-to-pricing">lead to pricing</a>
+        </div>
+      </div>
+
+      <div id="partner-with-us">
+        <h3 class="headline">Partner with us</h3>
+        <div class="partner-items">
+          <div class="item">
+            <div class="head">
+              <img src="https://djangostars.com/media/images/handshake.height-56.png" alt="">
+              <div class="title">Build an alliance</div>
+            </div>
+            <div class="description-text">
+              We believe that code is not the only one significant. We watch our partners’ backs through their whole journey from small companies to market leaders and warmly welcome them at our office.
+            </div>
+          </div>
+          <div class="item">
+            <div class="head">
+              <img src="https://djangostars.com/media/images/specs.height-56.png" alt="">
+              <div class="title">Keep the door open</div>
+            </div>
+            <div class="description-text">
+              When we take the project, we commit to make it soar. Keeping success in mind, we create architecture that enables easy scaling and expanding on new markets from the get-go.
+            </div>
+          </div>
+          <div class="item">
+            <div class="head">
+              <img src="https://djangostars.com/media/images/wireframes.height-56.png" alt="">
+              <div class="title">Create anything</div>
+            </div>
+            <div class="description-text">
+              We’ve created solutions for Switzerland, US, UK, MENA, and other regions in several domains, and have a broad experience in complying with industry and location-specific regulations.
+            </div>
+          </div>
+          <div class="item">
+            <div class="head">
+              <img src="https://djangostars.com/media/images/qa.height-56.png" alt="">
+              <div class="title">Decomplexify</div>
+            </div>
+            <div class="description-text">
+              We keep processes simple and transparent, and don’t mind to clarify features, so our partners always are on the same page with us. And yes, we get their jokes on morning standups.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="testimonials-section" id="struct-testimonial-three-card-block">
+        <h3 class="headline">What our customers say</h3>
+        <div class="content-container">
+          <div class="testimonial-list">
+            <ul class="list mid_size row">
+                <li class="c-testimonial-item col-lg-4 animated fade_in" data-sps-offset="-100">
+                  <div class="c-testimonial-item__card">
+                    <div class="c-testimonial-item__user-img"
+                         style="background-image: url('https://djangostars.com/media/images/amitabh-ghatak3x.width-160.png')"></div>
+                    <h4 class="c-testimonial-item__name">
+                      <a class="c-testimonial-item__name-link"
+                         href="https://www.linkedin.com/in/amitabhghatak/"
+                         target="_blank">
+                        Amitabh Ghatak
+                      </a>
+                    </h4>
+                    <p class="c-testimonial-item__position">
+                      Chief Product Officer of
+                      <a href="https://djangostars.com/case-studies/molo/"
+                         class="c-testimonial-item__company-link">Molo Finance</a>
+                    </p>
+
+                    <h5 class="c-testimonial-item__country">
+                      
+                        <span class="c-testimonial-item__country-text">United Kingdom</span>
+                      
+                    </h5>
+
+                    <div class="c-testimonial-item__short-feedback">
+                      <div class="rich-text"><p>They built our entire application website using Django and React, which was quite complex. They’re motivated and want to see us succeed, rather than acting purely as an outsourced developer.</p></div>
+                    </div>
+
+                    
+                      <div class="c-testimonial-item__clutch">
+                        <div class="c-testimonial-item__clutch-logo"></div>
+                        <div class="c-testimonial-item__clutch-rate">5.0</div>
+                        <div class="c-testimonial-item__clutch-stars"></div>
+                      </div>
+                      <a class="c-testimonial-item__read-more read_more"
+                         href="https://clutch.co/profile/django-stars#review-653356"
+                         target="_blank">Read more on Clutch <i class="icon-bt-next"></i></a>
+                  </div>
+                </li>
+                <li class="c-testimonial-item col-lg-4 animated fade_in" data-sps-offset="-100">
+                  <div class="c-testimonial-item__card">
+                    <div class="c-testimonial-item__user-img"
+                         style="background-image: url('https://djangostars.com/media/images/joel2018.width-160.jpg')"></div>
+                    <h4 class="c-testimonial-item__name">
+                      <a class="c-testimonial-item__name-link"
+                         href="https://www.linkedin.com/in/joelperrenoud/"
+                         target="_blank">
+                        Joel Perrenoud
+                      </a>
+                    </h4>
+                    <p class="c-testimonial-item__position">
+                      MD and Board Member of
+                      <a href="https://djangostars.com/case-studies/padi-travel/"
+                         class="c-testimonial-item__company-link">PADI Travel</a>
+                    </p>
+
+                    <h5 class="c-testimonial-item__country">
+                      
+                        <span class="c-testimonial-item__country-text">Switzerland</span>
+                      
+                    </h5>
+
+                    <div class="c-testimonial-item__short-feedback">
+                      <div class="rich-text"><p>We&#x27;ve received some very positive feedback both from our investors and from our users. Clean code, fluid and intuitive usability, and very contemporary. It was actually kind of a challenge to queue up enough work for them.</p></div>
+                    </div>
+
+                    
+                      <div class="c-testimonial-item__clutch">
+                        <div class="c-testimonial-item__clutch-logo"></div>
+                        <div class="c-testimonial-item__clutch-rate">5.0</div>
+                        <div class="c-testimonial-item__clutch-stars"></div>
+                      </div>
+                      <a class="c-testimonial-item__read-more read_more"
+                         href="https://clutch.co/profile/django-stars#review-21549"
+                         target="_blank">Read more on Clutch <i class="icon-bt-next"></i></a>
+                    
+                  </div>
+                </li>  
+                <li class="c-testimonial-item col-lg-4 animated fade_in" data-sps-offset="-100">
+                  <div class="c-testimonial-item__card">
+                    <div class="c-testimonial-item__user-img"
+                         style="background-image: url('https://djangostars.com/media/images/Benjamin-Tacquet_7euP2vJ.width-160.jpg')"></div>
+                    <h4 class="c-testimonial-item__name">
+                      <a class="c-testimonial-item__name-link"
+                         href="https://www.linkedin.com/in/benjamin-tacquet-4a012418/"
+                         target="_blank">
+                        Benjamin Tacquet
+                      </a>
+                    </h4>
+                    <p class="c-testimonial-item__position">
+                      CTO of
+                      <a href="https://djangostars.com/case-studies/moneypark/"
+                         class="c-testimonial-item__company-link">Moneypark</a>
+                    </p>
+
+                    <h5 class="c-testimonial-item__country">
+                      
+                        <span class="c-testimonial-item__country-text">Switzerland</span>
+                      
+                    </h5>
+
+                    <div class="c-testimonial-item__short-feedback">
+                      <div class="rich-text"><p>I’m very happy with Django Stars. They’re extremely open and they’re also flexible with our changing requirements. These guys provide very high-quality code.</p></div>
+                    </div>
+
+                    
+                      <div class="c-testimonial-item__clutch">
+                        <div class="c-testimonial-item__clutch-logo"></div>
+                        <div class="c-testimonial-item__clutch-rate">5.0</div>
+                        <div class="c-testimonial-item__clutch-stars"></div>
+                      </div>
+                      <a class="c-testimonial-item__read-more read_more"
+                         href="https://clutch.co/profile/django-stars#review-22169"
+                         target="_blank">Read more on Clutch <i class="icon-bt-next"></i></a>
+                    
+                  </div>
+                </li>
+            </ul>
+            <a href="https://djangostars.com/company/testimonials/" class="btn btn-primary">All testimonials</a>
+          </div>
+        </div>
+      </section>
+      <!-- keradans markup ENDS here. -->
+
+      <div class="contact-us-simple-block ds-request" id="contact-us">
+        <div id="get_in_touch_simple" class="block-content row">
+          <div class="col">
+            <h2 class="title">Have an idea? Let’s discuss!</h2>
+            <form class="col ds-request__form"
+                  method="POST"
+                  action="/get-in-touch/simple/"
+                  novalidate>
+              <input type="hidden" name="csrfmiddlewaretoken" value="g4Atl3EPkiJGCsiQ9dKb4EV8oH73TmzB5wNgZdbOX30yHsoi6xVDOSvdPv1YmUDG">
+              <div class="form-group">
+                
+                <input id="full_name"
+                      class="form-control ds-form__input ds-request__full-name"
+                      type="text"
+                      name="full_name"
+                      autocomplete="off"
+                      value="client"
+                      hidden>
+
+                
+                <input id="email"
+                      class="form-control ds-form__input ds-request__email"
+                      type="email"
+                      name="email"
+                      pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                      placeholder="Your email*"
+                      value=""
+                      autocomplete="off"
+                      data-label="email"
+                      required>
+
+                
+                <input id="phone"
+                      class="form-control ds-form__input ds-request__phone"
+                      type="tel"
+                      name="phone"
+                      placeholder="Your phone number"
+                      value=""
+                      pattern="(\+?\d[- .]*){7,13}"
+                      data-label="phone"
+                      autocomplete="off">
+
+                
+                <textarea id="project_description"
+                          class="form-control ds-form__textarea ds-request__project-description"
+                          name="project_description"
+                          placeholder="How can we help you?*"
+                          data-label="description"
+                          required></textarea>
+
+                <label class="ds-form__checkbox-block">
+                  <input id="is_agree_receive_content"
+                         class="ds-form__checkbox-input"
+                         type="checkbox"
+                         name="is_agree_receive_content"
+                         data-label="is_agree_receive_content"
+                         checked>
+                  <span class="ds-form__checkbox-checkmark"></span>
+                  <p class="ds-form__checkbox-text">I agree to receive educational content from Django Stars.</p>
+                </label>
+                <label class="ds-form__checkbox-block">
+                  <input id="is_accept_terms"
+                         class="ds-request__is_accept_terms ds-form__checkbox-input"
+                         type="checkbox"
+                         name="is_accept_terms"
+                         data-label="is_accept_terms"
+                  required>
+                  <span class="ds-form__checkbox-checkmark"></span>
+                  <p class="ds-form__checkbox-text">I have read and accepted the Terms of Use & Privacy Policy.</p>
+                </label>
+
+
+
+
+                <button class="btn btn-lg btn-white">Send now</button>
+                
+              </div>
+            </form>
+            <div class="form-notes">
+              <small class="form-text">
+                <div class="rich-text"><p>We will process the data you provide us with to prepare an estimation of your project and/or contact you. To learn more about how we process your data, visit our <a href="https://djangostars.com/policies/privacy-policy/">Privacy Policy</a>.</p></div>
+              </small>
+            </div>
+          </div>
+          <div class="col book-side">
+            
+              <div>
+                
+                  <h3 class="subtitle">Book an online meeting?</h3>
+                
+                
+                  <p class="desc">Do you have questions related to your project we can help you with?</p>
+                
+                
+                  <p class="desc">Talk to Ana. She will make sure all is covered. Don&#x27;t waste your time for hours of googling - get all the answers from the relevant expert in an hour.</p>
+                
+              </div>
+              <a class="btn btn-lg btn-dark"
+                href="https://calendly.com/anastasiia-yuvchyk/django-stars"
+                target="_blank">Book a meeting
+              </a>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="contacts-block" id="contact-form">
+        <div class="block-content row">
+                  <div class="contact-item">
+                    <img alt="Kyiv" height="192" src="https://djangostars.com/media/images/ic-kyiv-v-33x.original.original.png" width="192">
+                    <div class="contact-item-data">
+                      <p>Kyiv, Ukraine
+                        HQ <span>20:36</span></p>
+                      <p>Hlybochytska St., 32b, 04050</p>
+                      <a href="tel:+380 63 518 3295"
+                         class="contact-link">+380 63 518 3295</a>
+                      <a href="https://djangostars.com/cdn-cgi/l/email-protection#aec5cfdacb80c5dcd7d4c6c0cbc0c5c1eecac4cfc0c9c1dddacfdcdd80cdc1c3" class="contact-link"><span class="__cf_email__" data-cfemail="c5aea4b1a0ebaeb7bcbfadaba0abaeaa85a1afa4aba2aab6b1a4b7b6eba6aaa8">[email&#160;protected]</span></a>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <img alt="Colorado" height="192" src="https://djangostars.com/media/images/ic_colorado.original.png" width="192">
+                    <div class="contact-item-data">
+                      <p>Colorado, United States
+                         <span>11:36</span></p>
+                      <p>3024 Washington St., Boulder, 80304</p>
+                      <a href="tel:+1 303 459 2283"
+                         class="contact-link">+1 303 459 2283</a>
+                      <a href="https://djangostars.com/cdn-cgi/l/email-protection#adcfdfc4ccc3edc9c7ccc3cac2ded9ccdfde83cec2c0" class="contact-link"><span class="__cf_email__" data-cfemail="82e0f0ebe3ecc2e6e8e3ece5edf1f6e3f0f1ace1edef">[email&#160;protected]</span></a>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <img alt="Zürich" height="192" src="https://djangostars.com/media/images/ic-zurich-v-23x.original.png" width="192">
+                    <div class="contact-item-data">
+                      <p>Zürich, Switzerland
+                         <span>19:36</span></p>
+                      <p>I der Sänti 2, Willisau, 6130</p>
+                      <a href="tel:+44 996 8054"
+                         class="contact-link">+44 996 8054</a>
+                      <a href="https://djangostars.com/cdn-cgi/l/email-protection#dabcbbb8b3bbb49abeb0bbb4bdb5a9aebba8a9f4b9b5b7" class="contact-link"><span class="__cf_email__" data-cfemail="1177707378707f51757b707f767e62657063623f727e7c">[email&#160;protected]</span></a>
+                    </div>
+                  </div>
+        </div>
+      </div>
+
+      <footer id="footer" class="l-footer" data-location="home:footer">
+        <div class="container">
+          <div class="row">
+            <div class="l-footer__content">
+              <article class="l-footer__about">
+                <header class="l-footer__logo">
+                  <a href="https://djangostars.com/">
+                    <img class="nav__logo" src="https://djangostars.com/static/assets/svg/ds-logo-white.825099c5417e.svg" alt="Django Stars">
+                  </a>
+                </header>
+
+                <div class="l-footer__supporting-text">
+                  <div class="rich-text"><p>Django Stars is a technical partner for your software development and digital transformation. We strive for quality, cost-efficiency, innovation and transparent partnership.</p></div>
+                </div>
+                <div class="l-footer__contacts">
+                    <a href="tel:+1 650 741 0045">+1 650 741 0045</a>
+                    <a href="https://djangostars.com/cdn-cgi/l/email-protection#e38a8d858ca38789828d848c9097829190cd808c8e"><span class="__cf_email__" data-cfemail="f990979f96b99d9398979e968a8d988b8ad79a9694">[email&#160;protected]</span></a>
+                </div>
+              </article>
+              <section class="l-footer_column">
+                <a class="l-footer__headline" href="https://djangostars.com/company/">Company</a>
+
+                <ul class="l-footer__list">
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/company/team/"
+                         class="l-footer__list-link">Team</a>
+                      
+                    </li>
+                  
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/company/testimonials/"
+                         class="l-footer__list-link">Testimonials</a>
+                      
+                    </li>
+                  
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/company/careers/"
+                         class="l-footer__list-link">Careers</a>
+                      
+                        <a href="https://djangostars.com/company/careers/#vacancies"><span>6</span></a>
+                      
+                    </li>
+                </ul>
+                <span class="l-footer__headline">Locations</span>
+                <ul class="l-footer__list">
+                  
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/usa/"
+                         class="l-footer__list-link">USA</a>
+                    </li>
+                  
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/united-kingdom/"
+                         class="l-footer__list-link">United Kingdom</a>
+                    </li>
+                  
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/switzerland/"
+                         class="l-footer__list-link">Switzerland</a>
+                    </li>
+                </ul>
+              </section>
+              <section class="l-footer_column">
+                <a class="l-footer__headline" href="https://djangostars.com/services/">Services</a>
+
+                <ul class="l-footer__list">
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/services/software-consultancy/"
+                         class="l-footer__list-link">Software Consultancy</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/services/web-development/"
+                         class="l-footer__list-link">Web Development</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/services/mobile-app-development/"
+                         class="l-footer__list-link">Mobile App Development</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/services/uxui-design/"
+                         class="l-footer__list-link">UX/UI Design</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="https://djangostars.com/services/quality-assurance/"
+                         class="l-footer__list-link">Quality Assurance</a>
+                    </li>
+                    <span class="footer-divider"></span>    
+                    <li class="l-footer__list-item">
+                        <a href="#" class="l-footer__list-link">Digital Transformation Services</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Discovery Stage Services</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">CTO as a Service</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Legacy Code Update Services</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">MVP for startups</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Python &amp; Django Development</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">React Native Development</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Bespoke Software Development</a>
+                    </li>
+                </ul>
+              </section>
+              <section class="l-footer_column">
+                <a class="l-footer__headline" href="#">Industries</a>
+                <ul class="l-footer__list">
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Finance &amp; Banking</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Travel &amp; Booking</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Taxi &amp; Transportation</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Proptech &amp; Real Estate</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Healthcare &amp; Fitness</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">E-commerce &amp; Marketplaces</a>
+                    </li>
+                </ul>
+              </section>
+              <section class="l-footer_column">
+                <a href="https://djangostars.com/blog/"
+                   class="l-footer__headline">Blog</a>
+
+                <ul class="l-footer__list">
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Engineering</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Design</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Project Management</a>
+                    </li>
+                    <li class="l-footer__list-item">
+                      <a href="#" class="l-footer__list-link">Business</a>
+                    </li>
+                </ul>
+              </section>
+            </div>
+          </div>
+          <ul class="l-footer__list l-footer__social row">
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-clutch l-footer__social-icon"></a>
+              </li>
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-goodfirms l-footer__social-icon"></a>
+              </li>
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-medium l-footer__social-icon"></a>
+              </li>
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-github l-footer__social-icon"></a>
+              </li>
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-youtube l-footer__social-icon"></a>
+              </li>
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-dribbble l-footer__social-icon"></a>
+              </li>
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-linkedin l-footer__social-icon"></a>
+              </li>
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-facebook l-footer__social-icon"></a>
+              </li>
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-twitter l-footer__social-icon"></a>
+              </li>
+              <li class="l-footer__list-item">
+                  <a href="#" class="icon-instagram l-footer__social-icon"></a>
+              </li>
+          </ul>
+          <p class="l-footer__copy">© 2020 Django Stars, LLC. All Rights Reserved. 2711 Centerville Road, Suite 400, Wilmington, DE  19808, USA</p>
+        </div>
+      </footer>
+
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+      <script src="https://djangostars.com/static/assets/vundle.0ac21a72dace.js" defer></script>
+      <script src="https://djangostars.com/static/assets/bundle.7f9ae1170d47.js" defer></script>
+      <script async src="https://static1.clutch.co/sites/all/modules/custom/clutch_widget/js/widget.js"></script>
+
+      <!-- keradan add scripts for slider -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script>$('#python-experience .reviews-slider-wrapper .slider').slick();</script>
+      <!-- /keradan add scripts for slider -->
+    </div>
+  </body>
+</html>
